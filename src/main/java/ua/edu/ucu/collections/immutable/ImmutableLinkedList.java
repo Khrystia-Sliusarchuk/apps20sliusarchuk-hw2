@@ -27,8 +27,8 @@ public class ImmutableLinkedList implements ImmutableList {
     }
 
     static class Node {
-        Object value;
-        Node next;
+        private Object value;
+        private Node next;
 
         Node(Object val, Node n) {
             value = val;
@@ -38,7 +38,8 @@ public class ImmutableLinkedList implements ImmutableList {
 
     public ImmutableLinkedList copy(ImmutableLinkedList lst) {
         if (!isEmpty()) {
-            ImmutableLinkedList newImmLinkedList = new ImmutableLinkedList(lst.toArray());
+            ImmutableLinkedList newImmLinkedList =
+                    new ImmutableLinkedList(lst.toArray());
             return newImmLinkedList;
         } else {
             return new ImmutableLinkedList();
